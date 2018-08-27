@@ -1,0 +1,8 @@
+applications:
+  - path: .
+    name: Proj-Task45
+    environment_json: {}
+    memory: 256M
+    instances: 1
+    disk_quota: 1024M
+    services: []
