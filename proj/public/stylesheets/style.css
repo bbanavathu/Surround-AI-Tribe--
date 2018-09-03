@@ -1,82 +1,79 @@
-/* style.css
- * This file provides css styles.
- */
-
-body,html {
-	background-color: #3b4b54; width : 100%;
-	height: 100%;
-	margin: 0 auto;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #ffffff;
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
 }
-
-a {
-	text-decoration: none;
-	color: #00aed1;
+p {font-size: 16px;}
+.margin {margin-bottom: 45px;}
+.bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+    background-image: url("../images/barley-field-1423349_1920.jpg");
 }
-
-a:hover {
-	text-decoration: underline;
+.bg-2 { 
+    background-color: #999966; /* Dark Blue */
+    color: #ffffff;
 }
-
-.newappIcon {
-	padding-top: 10%;
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 2em;
-	max-width:200px;
+.bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
 }
-
-h1 {
-	font-weight: bold;
-	font-size: 2em;
+.bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
 }
-
-.leftHalf {
-	float: left;
-	background-color: #26343f;
-	width: 45%;
-	height: 100%;
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
-
-.rightHalf {
-	float: right;
-	width: 55%;
-	background-color: #313f4a;
-	height: 100%;
-	overflow:auto;
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
 }
-
-.blue {
-	color: #00aed1;
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+.addBtn {
+  cursor: pointer;
+  background-color: #96c392;
+  margin: 16px;
+  padding: 16px;
 }
 
 
-table {
-	table-layout: fixed;
-	width: 800px;
-	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #96c392;
+    padding-top: 50px;
+    color: grey;
 }
 
-th {
-	border-bottom: 1px solid #000;
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+    color: grey;
 }
-
-th, td {
-	text-align: left;
-	padding: 2px 20px;
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+    height:100%;
+    color: grey;
 }
-
-.env-var {
-	text-align: right;
-	border-right: 1px solid #000;
-	width: 30%;
-}
-
-pre {
-	padding: 0;
-	margin: 0;
-}
-

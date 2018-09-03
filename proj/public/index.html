@@ -1,26 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  
+  <title>Agribusiness Simulation Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script src="scripts/env.js"></script>
 
-  <head>
-    <title>NodeJS Starter Application</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="stylesheets/style.css">
-  </head>
+</head>
+<body>
 
-  <body>
-    <table>
-      <tr>
-        <td style= "width:30%;">
-          <img class = "newappIcon" src="images/newapp-icon.png">
-        </td>
-        <td>
-          <h1 id="message">Hello World!</h1>
-          <p class='description'></p> Thanks for creating a <span class = "blue">NodeJS Starter Application</span>.
-        </td>
-      </tr>
-    </table>
-  </body>
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Agribusiness Simulation</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#1">Introduction</a></li>
+        <li><a href="#2">Purpose</a></li>
+        <li><a href="#3">Team members</a></li>
+        <li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button></li>
+        <li><button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Already have an account - login here</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+
+
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content,container-fluid text-center">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" id="email" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" id="psw" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" id="repeatPsw" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="addBtn">Cancel</button>
+        <button id="submitButton" type="submit" class="addBtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content,container-fluid text-center">
+    <div class="container">
+      <h1>Login</h1>
+      <p>Please login here</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="text" id="email" placeholder="Enter Email" name="email" required><br>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" id="psw" placeholder="Enter Password" name="psw" required><br>
+          
+
+        <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="addBtn">Cancel</button>
+        <button id="loginButton" type="submit" class="addBtn">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- First Container -->
+<div id="1" class="container-fluid bg-1 text-center">
+  <h3 class="margin">Introducing Agribusiness Simulation Game</h3>
+  <img src="images/vegetables-752153_640.jpg" class="img-responsive img-circle margin" style="display:inline" alt="crops" width="350" height="350">
+  <h3>Simulation game to learn the impact of changing weather on different crop yields</h3>
+</div>
+
+<!-- Second Container -->
+<div id="2"class="container-fluid bg-2 text-center">
+  <h3 class="margin">Reason behind creation</h3>
+  <p>Purpose to learn the impact of events such as floods, drought, heavy rains etcetra on different crop yields through a simulation game. Players are to select upgrade options available to them to help reach the target yield for crops.</p>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
+
+<!-- Third Container (Grid) -->
+<div id="3" class="container-fluid bg-3 text-center">    
+  <h3 class="margin">People involved</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Palwinder Kaur Deol</p>
+      <p>pdeol@deakin.edu.au</p>
+      
+    </div>
+    <div class="col-sm-4"> 
+      <p>Bharathi Banavathu </p>
+      <p>bbanavathu@deakin.edu.au</p>
+      
+    </div>
+    <div class="col-sm-4"> 
+      <p>Sai Sumanth Byreddi</p>
+      <p>sbyreddi@deakin.edu.au</p>
+      
+    </div>
+      <div class="col-sm-4"> 
+        <p>ChiranJeevi Sairam Bhima</p>
+        <p>cbhima@deakin.edu.au</p>
+        
+      </div>
+      <div class="col-sm-4"> 
+        <p>Sakshi</p>
+        <p>efqn@deakin.edu.au</p>
+        
+      </div>
+      <div class="col-sm-4"> 
+        <p>Sakshi Chaudhary</p>
+        <p>schaudhary@deakin.edu.au</p>
+       
+      </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>&#169; Deakin Agribusiness team 2018</p> 
+</footer>
+
+</body>
 </html>
