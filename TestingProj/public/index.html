@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Agribusiness Simulation Game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script src="scripts/env.js"></script>
+  <script src="scripts/slideshow.js"></script>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Agribusiness Simulation</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#2">Introduction</a></li>
+        <li><a href="#1">Purpose</a></li>
+        <li><a href="#3">Team members</a></li>
+        <li><button id="b1" onclick="document.getElementById('id02').style.display='block'" style="width:auto; background-color:#003300; margin:10px">Members Signup</button></li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <div class="container">
+      <h1>Events</h1>
+      <p>Possible impacts on crop yields</p>
+      <hr>
+      <div class="dropdown" id="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Events
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+          <li role="presentation"><a id="eventid01" role="menuitem" tabindex="-1" href="#1">Heavy rainfall</a></li>
+          <li role="presentation"><a id="eventid02" role="menuitem" tabindex="-1" href="#">Temperature</a></li>
+          <li role="presentation"><a id="eventid03" role="menuitem" tabindex="-1" href="#">Natural Calamities</a></li>
+          <li role="presentation"><a id="eventid04" role="menuitem" tabindex="-1" href="#">Population</a></li>
+        </ul>
+      </div>
+      <div id="eventDes01" style="display: none">
+        <div id="imageContainer" style="height: 300px; width:45%; float:left; margin:20px">
+          <img id="imgDiv" style="height:100%; width:100%">
+        </div>
+        <div id="chartContainer1" style="height: 250px; width: 45% ; float:right; margin:20px">
+        <canvas id="pie-chart" width="800px" height="350"></canvas>
+        </div>
+        <div id="chartContainer2" style="height: 250px; width: 45% ; float:right; margin:20px">
+        <canvas id="bar-chart" width="800px" height="350"></canvas>
+      </div>
+      <div id="chartContainer3" style="height: 250px; width: 45% ; float:right; margin:20px">
+        <canvas id="bar-chart-grouped" width="800px" height="350"></canvas>
+      </div>
+      <div id="btndiv" style="float:right; margin:20px; padding:30px">
+        <button id="eventbtn">Switch event</button>
+    </div>
+    <div id="btndiv" style="float:right; margin:20px; padding:30px">
+      <button id="b2" onclick="document.getElementById('id03').style.display='block'" style="width:auto; margin:10px; background-color:#003300">Upgrade Farm</button>
+  </div>
+         
+      </div>
+      
+    </div>
+</div>
+
+
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content,container-fluid text-center">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="Username"><b>Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+      <input type="text" id="username" placeholder="Enter username" name="username" required><br>
+      
+      <label for="email"><b>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+      <input type="text" id="email" placeholder="Enter Email" name="email" required><br>
+
+      <label for="contactNumber"><b>Contact Number</b></label>
+      <input type="text" id="contact" placeholder="Enter contact number" name="contact" required><br>
+
+      <label for="psw"><b>Password&nbsp;&nbsp;&nbsp;</b></label>
+      <input type="password" id="psw" placeholder="Enter Password" name="psw" required><br>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" id="repeatPsw" placeholder="Repeat Password" name="psw-repeat" required><br>
+      
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="addBtn">Cancel</button>
+        <button id="submitButton" type="submit" class="addBtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div id="id03" class="modal">
+  <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+    <div class="container">
+      <h1> Farm Upgrades</h1>
+      <p>Knowing your needs and finding perfect solution</p>
+      <hr>
+      
+      <div class="container">
+        <!-- Full-width images with number text -->
+        <div class="mySlides">
+         <div class="numbertext">1 / 4</div>
+           <div style="text-align:center"><img src="images/u1.jpg" style="height:540px; width:60%"></div>
+       </div>
+     
+       <div class="mySlides">
+         <div class="numbertext">2 / 6</div>
+           <img src="images/u2.jpg" style="height:320px; width:80%; margin:80px">
+       </div>
+     
+       <div class="mySlides">
+         <div class="numbertext">3 / 6</div>
+           <img src="images/u3.jpg" style="height:320px; width:80%; margin:80px">
+       </div>
+     
+       <div class="mySlides">
+         <div class="numbertext">4 / 6</div>
+           <img src="images/u4.png" style="height:320px; width:80%; margin:80px">
+       </div>
+     
+       
+     
+       <!-- Next and previous buttons -->
+       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+       <a class="next" onclick="plusSlides(1)">&#10095;</a>
+     
+       <!-- Image text -->
+       <div class="caption-container">
+         <p id="caption"></p>
+       </div>
+     
+       <!-- Thumbnail images -->
+       <div class="row">
+         <div class="column">
+           <img class="demo cursor" src="images/u1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Step farming">
+         </div>
+         <div class="column"> 
+           <img class="demo cursor" src="images/u2.jpg" style="width:100%" onclick="currentSlide(2)" alt="irrigation">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="images/s3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Shedding">
+         </div>
+         <div class="column">
+           <img class="demo cursor" src="images/u4.png" style="width:100%" onclick="currentSlide(4)" alt="temperature analysis">
+         </div>
+        
+       </div>
+     </div>
+     
+      
+    </div>
+</div>
+
+
+<!-- First Container -->
+<div id="1" class="container">
+   <!-- Full-width images with number text -->
+   <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <div style="text-align:center"><img src="images/s1.jpg" style="height:540px; width:60%"></div>
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="images/s2.jpg" style="height:320px; width:80%; margin:80px">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="images/s3.jpg" style="height:320px; width:80%; margin:80px">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="images/s6.jpg" style="height:320px; width:80%; margin:80px">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="images/s4.jpg" style="height:320px; width:80%; margin:80px">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="images/s5.jpg" style="height:320px; width:80%; margin:80px">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/s1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Lemon, Fruit">
+    </div>
+    <div class="column"> 
+      <img class="demo cursor" src="images/s2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Barley">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/s3.jpg" style="width:100%" onclick="currentSlide(3)" alt="coffee-beans">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/s4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Sugarcane">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/s5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Vegetables">
+    </div> 
+    <div class="column">
+      <img class="demo cursor" src="images/s6.jpg" style="width:100%" onclick="currentSlide(5)" alt="white Cabbage">
+    </div> 
+  </div>
+</div>
+
+<!-- Second Container -->
+<div id="2" class="container-fluid bg-2 text-center">
+  <h3 class="margin">Nature and Farming</h3>
+  <p>Purpose is to learn the impacts of events such as floods, drought, heavy rains etcetra on different crop yields and ways to reduce these impacts.</p>
+  <button id="b2" onclick="document.getElementById('id01').style.display='block'" style="width:auto; margin:10px; background-color:#006699">Events</button>
+</div>
+
+
+<!-- Third Container (Grid) -->
+<div id="3" class="container-fluid bg-3 text-center">    
+  <h3 class="margin">People involved</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Palwinder Kaur Deol</p>
+      <p>pdeol@deakin.edu.au</p>
+      
+    </div>
+    <div class="col-sm-4"> 
+      <p>Bharathi Banavathu </p>
+      <p>bbanavathu@deakin.edu.au</p>
+      
+    </div>
+    <div class="col-sm-4"> 
+      <p>Sai Sumanth Byreddi</p>
+      <p>sbyreddi@deakin.edu.au</p>
+      
+    </div>
+      <div class="col-sm-4"> 
+        <p>ChiranJeevi Sairam Bhima</p>
+        <p>cbhima@deakin.edu.au</p>
+        
+      </div>
+      <div class="col-sm-4"> 
+        <p>Sakshi</p>
+        <p>efqn@deakin.edu.au</p>
+        
+      </div>
+      <div class="col-sm-4"> 
+        <p>Sakshi Chaudhary</p>
+        <p>schaudhary@deakin.edu.au</p>
+       
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>&#169; Deakin Agribusiness team 2018</p> 
+</footer>
+
+</body>
+</html>
